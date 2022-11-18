@@ -332,6 +332,10 @@ NiceSelect.prototype._onItemClicked = function(option, e) {
   }
 };
 
+NiceSelect.prototype.escapeRegExp = function(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+};
+
 NiceSelect.prototype.updateSelectValue = function() {
   if (this.multiple) {
     var select = this.el;
@@ -445,6 +449,7 @@ NiceSelect.prototype._onSearchChanged = function(e) {
       item.element.style.display = "";
     });
   } else if (open) {
+    text = this.escapeRegExp(text);
     var matchReg = new RegExp(text);
     this.options.forEach(function(item) {
       var optionText = item.data.text.toLowerCase();

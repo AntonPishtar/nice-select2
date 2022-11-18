@@ -6,7 +6,9 @@
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "css-loader": "^6.7.2"
+  },
   "devDependencies": {
     "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.45.1",
@@ -18,11 +20,11 @@
     "watch": "webpack --watch --progress",
     "dev": "npm run clean && cross-env NODE_ENV=\"development\" webpack",
     "clean": "shx rm -rf build/static",
-    "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack"
+    "build": "npm run clean && cross-env NODE_ENV=\"production\" webpack  --config webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluzky/nice-select2.git"
+    "url": "git+https://github.com/AntonPishtar/nice-select2.git"
   },
   "keywords": [
     "select",
@@ -31,7 +33,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bluzky/nice-select2/issues"
+    "url": "https://github.com/AntonPishtar/nice-select2/issues"
   },
-  "homepage": "https://github.com/bluzky/nice-select2#readme"
+  "homepage": "https://github.com/AntonPishtar/nice-select2#readme"
 }
